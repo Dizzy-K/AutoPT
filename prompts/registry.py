@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from autort.benchmark.models import BenchmarkItem
+from autopt.benchmark.models import BenchmarkItem
 
 from .layers import build_benchmark_prompt_layer
 from .templates import DEFAULT_PROMPTS, PromptBundle

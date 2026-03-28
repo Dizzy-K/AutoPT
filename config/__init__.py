@@ -1,4 +1,4 @@
-"""Configuration models and loaders for Auto_RT."""
+"""Configuration models and loaders for AutoPT."""
 
 from .loader import ConfigError, load_app_config
 from .schema import (

@@ -4,8 +4,8 @@ from dataclasses import dataclass
 from functools import partial
 from typing import TYPE_CHECKING, Any, Callable
 
-from autort.prompts.templates import PromptBundle
-from autort.tools.registry import ToolSpec
+from autopt.prompts.templates import PromptBundle
+from autopt.tools.registry import ToolSpec
 
 from .parser import classify_check_result, message_content, parse_vulnerabilities
 from .state import WorkflowContext, WorkflowState

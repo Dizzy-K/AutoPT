@@ -3,8 +3,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
-from autort.config.schema import AppConfig
-from autort.models.registry import ModelSpec
+from autopt.config.schema import AppConfig
+from autopt.models.registry import ModelSpec
 
 
 @dataclass(frozen=True, slots=True)

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from autort.benchmark.models import BenchmarkItem
+from autopt.benchmark.models import BenchmarkItem
 
 from .templates import PromptBundle
 
