@@ -19,7 +19,7 @@ from .summary import (
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Unified Auto_RT result analysis entrypoint.")
+    parser = argparse.ArgumentParser(description="Unified AutoPT result analysis entrypoint.")
     configure_analysis_subcommands(parser)
     return parser
 

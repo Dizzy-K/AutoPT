@@ -3,9 +3,9 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "auto-rt"
+name = "autopt"
 version = "0.1.0"
-description = "Unified Auto_RT mainline workflow, experiment runner, and analysis tooling."
+description = "Unified AutoPT mainline workflow, experiment runner, and analysis tooling."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
@@ -25,39 +25,25 @@ analysis = [
     "matplotlib>=3.8,<4.0",
     "numpy>=1.26,<3.0",
 ]
-legacy = [
-    "beautifulsoup4>=4.12,<5.0",
-    "chardet>=5.0,<6.0",
-    "IPython>=8.12,<9.0",
-    "jsonlines>=4.0,<5.0",
-    "langchain-community>=0.3,<0.4",
-    "langchain-experimental>=0.3,<0.4",
-    "langchain-google-community>=1.0,<2.0",
-    "pandas>=2.2,<3.0",
-    "requests>=2.32,<3.0",
-    "seaborn>=0.13,<0.14",
-    "termcolor>=2.4,<3.0",
-    "tqdm>=4.66,<5.0",
-]
 dev = [
     "build>=1.2,<2.0",
     "pytest>=8.0,<9.0",
 ]
 
 [project.scripts]
-autort = "autort.cli.main:main"
+autopt = "autopt.cli.main:main"
 
 [tool.setuptools]
-package-dir = {autort = "."}
+package-dir = {autopt = "."}
 packages = [
-    "autort",
-    "autort.analysis",
-    "autort.benchmark",
-    "autort.cli",
-    "autort.config",
-    "autort.models",
-    "autort.prompts",
-    "autort.runner",
-    "autort.tools",
-    "autort.workflow",
+    "autopt",
+    "autopt.analysis",
+    "autopt.benchmark",
+    "autopt.cli",
+    "autopt.config",
+    "autopt.models",
+    "autopt.prompts",
+    "autopt.runner",
+    "autopt.tools",
+    "autopt.workflow",
 ]

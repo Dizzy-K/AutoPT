@@ -9,7 +9,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
 
-from autort.config.schema import CommandToolProviderConfig, RuntimeConfig, SSHConfig
+from autopt.config.schema import CommandToolProviderConfig, RuntimeConfig, SSHConfig
 
 
 DEFAULT_MARKER_PREFIX = "__AUTORT_CMD_DONE__"

@@ -4,10 +4,10 @@ import operator
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Annotated, Any, Sequence, TypedDict
 
-from autort.config.schema import AppConfig, WorkflowConfig
+from autopt.config.schema import AppConfig, WorkflowConfig
 
 if TYPE_CHECKING:
-    from autort.benchmark.models import BenchmarkItem
+    from autopt.benchmark.models import BenchmarkItem
 
 
 DEFAULT_PROBLEM_TEMPLATE = (

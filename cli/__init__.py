@@ -1,2 +1,2 @@
-"""CLI entrypoints for Auto_RT."""
+"""CLI entrypoints for AutoPT."""
 

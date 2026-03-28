@@ -35,7 +35,7 @@ def read_html(url: str) -> str:
     if parsed.scheme not in {"http", "https"}:
         return f"ReadHTML error: unsupported URL scheme `{parsed.scheme or 'unknown'}`."
 
-    request = Request(normalized, headers={"User-Agent": "AutoRT/1.0"})
+    request = Request(normalized, headers={"User-Agent": "AutoPT/1.0"})
     try:
         with urlopen(request, timeout=DEFAULT_READ_TIMEOUT_SECONDS) as response:  # nosec B310 - URL comes from explicit tool usage
             raw_html = response.read(DEFAULT_MAX_READ_BYTES + 1)

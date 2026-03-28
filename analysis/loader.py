@@ -5,7 +5,20 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Iterable, Iterator, Sequence
 
-from autort.benchmark.loader import load_benchmarks
+from autopt.benchmark.loader import load_benchmarks
+
+
+RESULT_NAMESPACE = "autopt"
+LEGACY_RESULT_NAMESPACE = f"{RESULT_NAMESPACE[:-2]}rt"
+
+
+def _normalize_result_namespace(value: Any) -> str:
+    text = str(value or "")
+    legacy_prefix = f"{LEGACY_RESULT_NAMESPACE}."
+    current_prefix = f"{RESULT_NAMESPACE}."
+    if text.startswith(legacy_prefix):
+        return text.replace(legacy_prefix, current_prefix, 1)
+    return text
 
 
 _MODEL_ALIAS_ALIASES = {
@@ -125,8 +138,8 @@ def _normalize_payload(
     source_path: Path,
     benchmark_index: dict[str, dict[str, Any]],
 ) -> Iterator[NormalizedResult]:
-    schema_version = str(payload.get("schema_version", ""))
-    if schema_version in {"autort.experiment_report.v1", "autort.legacy_main_compat.v1"}:
+    schema_version = _normalize_result_namespace(payload.get("schema_version", ""))
+    if schema_version in {"autopt.experiment_report.v1", "autopt.legacy_main_compat.v1"}:
         for item in payload.get("results", []):
             if isinstance(item, dict):
                 yield _normalize_task_result(item, source_path, benchmark_index)
@@ -138,7 +151,7 @@ def _normalize_payload(
                     yield _normalize_task_result(item, source_path, benchmark_index)
         return
 
-    if schema_version == "autort.task_result.v1" or {"status", "benchmark_name", "model_alias"}.issubset(payload):
+    if schema_version == "autopt.task_result.v1" or {"status", "benchmark_name", "model_alias"}.issubset(payload):
         yield _normalize_task_result(payload, source_path, benchmark_index)
         return
 
@@ -170,7 +183,7 @@ def _normalize_task_result(
         benchmark_name=benchmark_name or str(benchmark_metadata.get("name", "")),
         model_alias=model_alias,
         arch=_infer_arch(details, source_path),
-        workflow_name=str(details.get("workflow_name", "")),
+        workflow_name=_normalize_result_namespace(details.get("workflow_name", "")),
         prompt_bundle_name=str(details.get("prompt_bundle_name", "")),
         difficulty=str(benchmark_metadata.get("difficulty", "")),
         category=str(benchmark_metadata.get("category", benchmark_metadata.get("type", ""))),

@@ -4,10 +4,10 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
-from autort.benchmark.loader import find_benchmark_by_name, load_benchmarks
-from autort.benchmark.models import BenchmarkItem
-from autort.config.schema import AppConfig
-from autort.models.registry import resolve_model
+from autopt.benchmark.loader import find_benchmark_by_name, load_benchmarks
+from autopt.benchmark.models import BenchmarkItem
+from autopt.config.schema import AppConfig
+from autopt.models.registry import resolve_model
 
 from .result_schema import build_experiment_report, summarize_task_results
 from .result_writer import write_jsonl_record

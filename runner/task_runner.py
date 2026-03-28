@@ -5,15 +5,15 @@ from dataclasses import dataclass, field
 from time import time
 from typing import Any
 
-from autort.benchmark.models import BenchmarkItem
-from autort.config.schema import AppConfig
-from autort.models.providers import build_chat_model
-from autort.models.registry import ModelSpec
-from autort.prompts.registry import get_prompt_bundle
-from autort.prompts.templates import PromptBundle
-from autort.tools.registry import build_default_tool_specs
-from autort.workflow import WorkflowContext, build_workflow_definition
-from autort.workflow.builder import WorkflowDefinition
+from autopt.benchmark.models import BenchmarkItem
+from autopt.config.schema import AppConfig
+from autopt.models.providers import build_chat_model
+from autopt.models.registry import ModelSpec
+from autopt.prompts.registry import get_prompt_bundle
+from autopt.prompts.templates import PromptBundle
+from autopt.tools.registry import build_default_tool_specs
+from autopt.workflow import WorkflowContext, build_workflow_definition
+from autopt.workflow.builder import WorkflowDefinition
 
 from .result_schema import build_task_result_details, serialize_json_value, serialize_task_result
 
@@ -108,7 +108,7 @@ class TaskRunner:
                     benchmark=request.benchmark.to_dict(),
                     model=request.model.to_dict(),
                     architecture="FSM",
-                    workflow_name="autort.workflow.v1",
+                    workflow_name="autopt.workflow.v1",
                     prompt_bundle_name=request.prompt_bundle_name,
                     result=serialize_json_value(result),
                     history=context.history,
@@ -130,7 +130,7 @@ class TaskRunner:
                     benchmark=request.benchmark.to_dict(),
                     model=request.model.to_dict(),
                     architecture="FSM",
-                    workflow_name="autort.workflow.v1",
+                    workflow_name="autopt.workflow.v1",
                     prompt_bundle_name=request.prompt_bundle_name,
                     error=str(exc),
                     history=context.history,

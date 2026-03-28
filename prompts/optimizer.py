@@ -3,9 +3,9 @@ from __future__ import annotations
 from collections.abc import Sequence
 from typing import Any
 
-from autort.config.schema import AppConfig
-from autort.models.providers import build_chat_model
-from autort.models.registry import ModelSpec
+from autopt.config.schema import AppConfig
+from autopt.models.providers import build_chat_model
+from autopt.models.registry import ModelSpec
 
 from .templates import DEFAULT_PROMPTS, PromptBundle
 

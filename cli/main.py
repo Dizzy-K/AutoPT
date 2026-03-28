@@ -7,15 +7,15 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Sequence
 
-from autort.analysis.cli import configure_analysis_subcommands, handle_analysis_command
-from autort.benchmark.loader import find_benchmark_by_name, load_benchmarks
-from autort.config import AppConfig, load_app_config
-from autort.models.registry import ModelSpec, resolve_model
-from autort.prompts import list_prompt_bundle_names
-from autort.runner.experiment_runner import ExperimentRequest, ExperimentRunner
-from autort.runner.result_writer import write_jsonl_record
-from autort.runner.task_runner import TaskRunner, build_task_request
-from autort.tools.terminal import InteractiveShell
+from autopt.analysis.cli import configure_analysis_subcommands, handle_analysis_command
+from autopt.benchmark.loader import find_benchmark_by_name, load_benchmarks
+from autopt.config import AppConfig, load_app_config
+from autopt.models.registry import ModelSpec, resolve_model
+from autopt.prompts import list_prompt_bundle_names
+from autopt.runner.experiment_runner import ExperimentRequest, ExperimentRunner
+from autopt.runner.result_writer import write_jsonl_record
+from autopt.runner.task_runner import TaskRunner, build_task_request
+from autopt.tools.terminal import InteractiveShell
 
 
 DEFAULT_MAINLINE_CONFIG = Path("configs/config.yml")
@@ -38,15 +38,15 @@ EXPERIMENT_HELP = (
 )
 DOCTOR_EPILOG = (
     "Examples:\n"
-    "  autort doctor\n"
-    "  autort doctor --benchmark-file <path-to-benchmark.jsonl>\n"
-    "  autort doctor --model openai:gpt-5.2"
+    "  uv run autopt doctor\n"
+    "  uv run autopt doctor --benchmark-file <path-to-benchmark.jsonl>\n"
+    "  uv run autopt doctor --model openai:gpt-5.2"
 )
 EXPERIMENT_EPILOG = (
     "Examples:\n"
-    "  autort experiment --benchmark-file <path-to-benchmark.jsonl> \\\n"
+    "  autopt experiment --benchmark-file <path-to-benchmark.jsonl> \\\n"
     "    --models openai:gpt-5.2 --ip-addr 127.0.0.1:8080\n\n"
-    "  autort experiment --benchmark-file <path-to-benchmark.jsonl> \\\n"
+    "  autopt experiment --benchmark-file <path-to-benchmark.jsonl> \\\n"
     "    --benchmark-name thinkphp/5-rce drupal/CVE-2018-7600 \\\n"
     "    --models openai:gpt-5.2 openai:gpt-4o \\\n"
     "    --repeat 3 --output-file data/results/experiment.jsonl --ip-addr 127.0.0.1:8080"
@@ -54,7 +54,7 @@ EXPERIMENT_EPILOG = (
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Auto_RT unified CLI.")
+    parser = argparse.ArgumentParser(description="AutoPT unified CLI.")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     benchmark_parser = subparsers.add_parser(
@@ -325,8 +325,8 @@ def handle_doctor(
 
     try:
         shell = InteractiveShell(config.runtime, scanner_provider=scanner_provider)
-        runtime_result = shell.execute("printf autort-doctor")
-        if runtime_result.exit_code == 0 and "autort-doctor" in runtime_result.output:
+        runtime_result = shell.execute("printf autopt-doctor")
+        if runtime_result.exit_code == 0 and "autopt-doctor" in runtime_result.output:
             if config.runtime.provider == "local":
                 add_check("pass", "runtime", "Local shell command execution works.")
             else:

@@ -5,8 +5,8 @@ from pathlib import Path
 from typing import Any
 
 
-TASK_RESULT_SCHEMA_VERSION = "autort.task_result.v1"
-EXPERIMENT_REPORT_SCHEMA_VERSION = "autort.experiment_report.v1"
+TASK_RESULT_SCHEMA_VERSION = "autopt.task_result.v1"
+EXPERIMENT_REPORT_SCHEMA_VERSION = "autopt.experiment_report.v1"
 
 
 def serialize_json_value(value: Any) -> Any:

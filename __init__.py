@@ -1,4 +1,4 @@
-"""Auto_RT unified application package."""
+"""AutoPT unified application package."""
 
 from .config.schema import AppConfig, OptimizationConfig
 
