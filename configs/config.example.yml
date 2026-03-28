@@ -1,0 +1,35 @@
+llm: # 大模型相关的默认设置。
+  default_provider: openai # 当模型名不写 `provider:` 前缀时，默认使用的 provider。
+  default_model: "openai:gpt-5.2" # `inspect`、`run`、`doctor` 默认使用的模型。
+  temperature: 0 # 采样温度，工具调用场景通常建议设为 `0`。
+  providers: # 各个 provider 的连接配置。
+    openai: # OpenAI 或兼容 OpenAI 协议的接口配置。
+      api_base: "" # 可选的自定义 base URL；留空时使用官方默认地址。
+      api_key: "" # OpenAI provider 的 API Key。
+    nvidia: # NVIDIA NIM 的接口配置。
+      api_key: "" # NVIDIA provider 的 API Key。
+    together: # Together AI 的接口配置。
+      api_key: "" # Together provider 的 API Key。
+
+runtime: # 命令实际执行的位置。
+  provider: local # `local` 表示在当前机器执行；`ssh` 表示在下面配置的远程机器执行。
+  ssh: # 仅在 `runtime.provider` 为 `ssh` 时生效的远程连接配置。
+    host: "" # 远程机器的 SSH 主机名或 IP。
+    port: 22 # 远程机器的 SSH 端口。
+    username: "root" # SSH 登录用户名。
+    password: "" # SSH 登录密码。
+    timeout: 30 # SSH 连接和命令执行的超时时间，单位为秒。
+
+workflow: # Agent workflow 的循环次数和调试开关。
+  sys_iterations: 15 # 系统规划阶段允许的最大迭代次数。
+  exp_iterations: 1 # 利用尝试阶段允许的最大迭代次数。
+  query_iterations: 1 # 信息查询阶段允许的最大迭代次数。
+  scan_iterations: 1 # 扫描阶段允许的最大迭代次数。
+  debug: false # 是否输出更详细的 workflow 调试信息。
+
+tools: # 外部工具相关配置。
+  scanner: # 当 workflow 触发 `xray` 扫描时实际调用的命令配置。
+    executable: "xray" # 扫描器可执行文件名，或它的绝对路径。
+    # extra_args: [] # 可选：每次调用扫描器时都额外追加的命令行参数。
+    # env: {} # 可选：仅在执行扫描器时注入的环境变量。
+    # working_directory: "" # 可选：执行扫描器前先切换到的工作目录。

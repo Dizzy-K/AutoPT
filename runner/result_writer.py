@@ -1,0 +1,13 @@
+from __future__ import annotations
+
+import json
+from pathlib import Path
+from typing import Any, Mapping
+
+
+def write_jsonl_record(path: str | Path, payload: Mapping[str, Any]) -> None:
+    output_path = Path(path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with output_path.open("a", encoding="utf-8") as stream:
+        stream.write(json.dumps(dict(payload), ensure_ascii=False))
+        stream.write("\n")
