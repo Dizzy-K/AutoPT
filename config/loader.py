@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""YAML-based configuration loading and validation."""
+
 from collections.abc import Mapping, Sequence
 from pathlib import Path
 from typing import Any
