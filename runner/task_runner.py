@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Single-task execution engine and request/result data types."""
+
 import asyncio
 from dataclasses import dataclass, field
 from time import time
