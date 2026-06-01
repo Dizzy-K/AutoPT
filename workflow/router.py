@@ -7,6 +7,7 @@ from .state import WorkflowState
 
 
 def route_next(state: WorkflowState) -> str:
+    """Determine the next workflow node based on current sender and check count."""
     messages = state["message"]
     sender = state["sender"]
     last_message = message_content(messages[-1]) if messages else ""
