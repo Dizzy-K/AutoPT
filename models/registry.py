@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Model specification registry and resolution logic."""
+
 from dataclasses import dataclass
 from typing import Any
 
