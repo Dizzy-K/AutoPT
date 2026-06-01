@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Pydantic configuration models for AutoPT runtime, LLM, tools, and workflow settings."""
+
 from dataclasses import dataclass, field
 
 
