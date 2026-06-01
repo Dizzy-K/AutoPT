@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Provider adapter layer for instantiating chat model clients."""
+
 from dataclasses import dataclass
 from typing import Any
 
