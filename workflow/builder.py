@@ -67,6 +67,7 @@ def build_workflow_definition(
     tool_specs: list[ToolSpec],
     metadata: dict[str, Any] | None = None,
 ) -> WorkflowDefinition:
+    """Construct a WorkflowDefinition with explicit edge declarations."""
     return WorkflowDefinition(
         context=context,
         prompts=prompts,
