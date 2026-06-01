@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Normalized result loading and legacy result migration helpers."""
+
 import json
 from dataclasses import dataclass, field
 from pathlib import Path
