@@ -1,4 +1,8 @@
-"""Configuration models and loaders for AutoPT."""
+"""Configuration models and loaders for AutoPT.
+
+Central configuration layer providing typed schema models via Pydantic
+and YAML-based config file loading with validation.
+"""
 
 from .loader import ConfigError, load_app_config
 from .schema import (
