@@ -80,6 +80,7 @@ def build_task_request(
 
 
 class TaskRunner:
+    """Execute a single benchmark task through the LangGraph workflow."""
     def run(self, request: TaskRequest) -> TaskResult:
         start = time()
         context = request.workflow.context
