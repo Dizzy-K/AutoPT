@@ -53,6 +53,7 @@ class ExperimentReport:
 
 @dataclass(slots=True)
 class ExperimentRunner:
+    """Orchestrate batch experiments across benchmarks x models x repeats."""
     task_runner: TaskRunner = field(default_factory=TaskRunner)
 
     def build_task_requests(self, request: ExperimentRequest) -> list[TaskRequest]:
