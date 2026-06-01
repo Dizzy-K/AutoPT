@@ -1,10 +1,13 @@
 from __future__ import annotations
 
+"""Conditional routing logic for the workflow state graph."""
+
 from .parser import message_content
 from .state import WorkflowState
 
 
 def route_next(state: WorkflowState) -> str:
+    """Determine the next workflow node based on current sender and check count."""
     messages = state["message"]
     sender = state["sender"]
     last_message = message_content(messages[-1]) if messages else ""
