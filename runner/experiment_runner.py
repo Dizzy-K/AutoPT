@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Batch experiment runner executing task combinations and producing reports."""
+
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -51,6 +53,7 @@ class ExperimentReport:
 
 @dataclass(slots=True)
 class ExperimentRunner:
+    """Orchestrate batch experiments across benchmarks x models x repeats."""
     task_runner: TaskRunner = field(default_factory=TaskRunner)
 
     def build_task_requests(self, request: ExperimentRequest) -> list[TaskRequest]:
