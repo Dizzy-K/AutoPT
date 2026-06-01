@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""History entry parsing and step grouping for workflow transcripts."""
+
 import re
 from typing import Any, Iterable
 
