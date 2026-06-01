@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Pydantic configuration models for AutoPT runtime, LLM, tools, and workflow settings."""
+
 from dataclasses import dataclass, field
 
 
@@ -132,6 +134,7 @@ class PathsConfig:
 
 
 @dataclass(slots=True)
+# Top-level application configuration aggregating all sub-configs.
 class AppConfig:
     workflow: WorkflowConfig = field(default_factory=WorkflowConfig)
     llm: LLMConfig = field(default_factory=LLMConfig)
