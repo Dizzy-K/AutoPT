@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Workflow graph definition and LangGraph compilation."""
+
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Any
 
