@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Task and experiment result serialization schemas and helpers."""
+
 from collections.abc import Mapping, Sequence
 from pathlib import Path
 from typing import Any
