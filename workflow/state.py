@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Workflow state container and context for the agent execution graph."""
+
 import operator
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Annotated, Any, Sequence, TypedDict
@@ -26,6 +28,7 @@ class WorkflowState(TypedDict):
 
 @dataclass(slots=True)
 class WorkflowContext:
+    """Holds mutable context shared across all workflow nodes during execution."""
     benchmark_name: str
     config: AppConfig | None = None
     problem_template: str = DEFAULT_PROBLEM_TEMPLATE
