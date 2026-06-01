@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Single-task execution engine and request/result data types."""
+
 import asyncio
 from dataclasses import dataclass, field
 from time import time
@@ -78,6 +80,7 @@ def build_task_request(
 
 
 class TaskRunner:
+    """Execute a single benchmark task through the LangGraph workflow."""
     def run(self, request: TaskRequest) -> TaskResult:
         start = time()
         context = request.workflow.context
