@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Tool specification model and default tool set builder."""
+
 from dataclasses import dataclass
 from typing import Any, Callable
 
