@@ -43,6 +43,7 @@ _COMPOSITE_FIELDS = {
 
 
 def summarize_results(results: Iterable[NormalizedResult]) -> dict[str, Any]:
+    """Build a multi-dimensional summary from a collection of normalized results."""
     result_list = list(results)
     tables = {
         "benchmark": summarize_by_field(result_list, "benchmark"),
