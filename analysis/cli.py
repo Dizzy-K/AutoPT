@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""CLI subcommand configuration for the analysis module."""
+
 import argparse
 import csv
 import json
