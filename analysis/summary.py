@@ -1,5 +1,17 @@
 from __future__ import annotations
 
+"""Metric summarization and aggregation for normalized benchmark results.
+
+This module supports grouping by single or composite fields,
+solve-rate bucketing, and export of summary rows for downstream reporting.
+"""
+
+"""Metric summarization and aggregation for normalized benchmark results.
+
+This module supports grouping by single or composite fields,
+solve-rate bucketing, and export of summary rows for downstream reporting.
+"""
+
 from collections import defaultdict
 from pathlib import Path
 from typing import Any, Iterable
