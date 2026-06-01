@@ -19,6 +19,7 @@ from typing import Any, Iterable
 from .loader import NormalizedResult
 
 
+# Mapping from field name to attribute accessor on NormalizedResult.
 _SIMPLE_FIELD_GETTERS = {
     "benchmark": lambda item: item.benchmark_name,
     "benchmark_name": lambda item: item.benchmark_name,
