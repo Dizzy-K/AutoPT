@@ -51,6 +51,7 @@ def summarize_failure_reasons(
 
 
 def classify_failure(result: NormalizedResult) -> list[str]:
+    """Return a list of failure reason labels for a normalized result."""
     reasons: list[str] = []
     commands = [str(command) for command in result.commands]
     history = [str(item) for item in result.history]
