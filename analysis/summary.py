@@ -1,5 +1,17 @@
 from __future__ import annotations
 
+"""Metric summarization and aggregation for normalized benchmark results.
+
+This module supports grouping by single or composite fields,
+solve-rate bucketing, and export of summary rows for downstream reporting.
+"""
+
+"""Metric summarization and aggregation for normalized benchmark results.
+
+This module supports grouping by single or composite fields,
+solve-rate bucketing, and export of summary rows for downstream reporting.
+"""
+
 from collections import defaultdict
 from pathlib import Path
 from typing import Any, Iterable
@@ -7,6 +19,7 @@ from typing import Any, Iterable
 from .loader import NormalizedResult
 
 
+# Mapping from field name to attribute accessor on NormalizedResult.
 _SIMPLE_FIELD_GETTERS = {
     "benchmark": lambda item: item.benchmark_name,
     "benchmark_name": lambda item: item.benchmark_name,
@@ -30,6 +43,7 @@ _COMPOSITE_FIELDS = {
 
 
 def summarize_results(results: Iterable[NormalizedResult]) -> dict[str, Any]:
+    """Build a multi-dimensional summary from a collection of normalized results."""
     result_list = list(results)
     tables = {
         "benchmark": summarize_by_field(result_list, "benchmark"),
