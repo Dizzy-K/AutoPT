@@ -54,6 +54,7 @@ EXPERIMENT_EPILOG = (
 
 
 def build_parser() -> argparse.ArgumentParser:
+    """Construct the full AutoPT CLI argument parser with all subcommands."""
     parser = argparse.ArgumentParser(description="AutoPT unified CLI.")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
