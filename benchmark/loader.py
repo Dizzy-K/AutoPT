@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Benchmark file loading and lookup utilities."""
+
 import json
 from pathlib import Path
 
