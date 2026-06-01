@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""JSONL result file writer with automatic directory creation."""
+
 import json
 from pathlib import Path
 from typing import Any, Mapping
