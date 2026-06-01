@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Visualization and plotting utilities for benchmark result analysis."""
+
 from typing import Any
 
 
