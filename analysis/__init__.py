@@ -1,4 +1,9 @@
-"""Unified result analysis helpers."""
+"""Unified result analysis helpers.
+
+This package provides standardized result loading, normalization,
+failure classification, history parsing, and metric summarization
+for AutoPT benchmark experiment outputs.
+"""
 
 from .failures import classify_failure, collect_failed_commands, summarize_failure_reasons
 from .history import group_history_steps, parse_history_entries
