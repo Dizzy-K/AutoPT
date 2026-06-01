@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Failure classification and reason analysis for benchmark results."""
+
 from collections import defaultdict
 from typing import Any, Iterable
 
