@@ -1,5 +1,8 @@
 """Unified result analysis helpers.
 
+Public API surface for the analysis subpackage.
+
+
 This package provides standardized result loading, normalization,
 failure classification, history parsing, and metric summarization
 for AutoPT benchmark experiment outputs.
