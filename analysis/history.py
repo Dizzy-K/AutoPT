@@ -10,6 +10,7 @@ _HISTORY_HEAD_PATTERN = re.compile(r"^(?P<sender>[A-Za-z_]+?)(?P<step>\d+)$")
 
 
 def parse_history_entries(history: Iterable[Any]) -> list[dict[str, Any]]:
+    """Parse raw history entries into structured dicts with sender, step, and type."""
     parsed: list[dict[str, Any]] = []
     for raw_entry in history:
         text = str(raw_entry)
