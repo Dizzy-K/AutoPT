@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Batch experiment runner executing task combinations and producing reports."""
+
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
