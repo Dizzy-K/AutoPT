@@ -1,10 +1,13 @@
 from __future__ import annotations
 
+"""Task and experiment result serialization schemas and helpers."""
+
 from collections.abc import Mapping, Sequence
 from pathlib import Path
 from typing import Any
 
 
+# Schema version constants for task and experiment report payloads.
 TASK_RESULT_SCHEMA_VERSION = "autopt.task_result.v1"
 EXPERIMENT_REPORT_SCHEMA_VERSION = "autopt.experiment_report.v1"
 
