@@ -28,6 +28,7 @@ class WorkflowState(TypedDict):
 
 @dataclass(slots=True)
 class WorkflowContext:
+    """Holds mutable context shared across all workflow nodes during execution."""
     benchmark_name: str
     config: AppConfig | None = None
     problem_template: str = DEFAULT_PROBLEM_TEMPLATE
