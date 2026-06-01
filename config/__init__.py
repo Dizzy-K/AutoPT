@@ -4,6 +4,7 @@ Central configuration layer providing typed schema models via Pydantic
 and YAML-based config file loading with validation.
 """
 
+# Public API: schema models and config loader.
 from .loader import ConfigError, load_app_config
 from .schema import (
     AppConfig,
