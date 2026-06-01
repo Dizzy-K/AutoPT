@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Message content extraction and vulnerability parsing utilities."""
+
 import re
 from typing import Any, Iterable
 
