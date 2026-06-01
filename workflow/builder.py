@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Workflow graph definition and LangGraph compilation."""
+
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Any
 
@@ -65,6 +67,7 @@ def build_workflow_definition(
     tool_specs: list[ToolSpec],
     metadata: dict[str, Any] | None = None,
 ) -> WorkflowDefinition:
+    """Construct a WorkflowDefinition with explicit edge declarations."""
     return WorkflowDefinition(
         context=context,
         prompts=prompts,
