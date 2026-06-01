@@ -1,4 +1,8 @@
-"""Task and experiment runners."""
+"""Task and experiment runners.
+
+Provides the core execution layer for single benchmark tasks
+and batch experiment runs with result serialization.
+"""
 
 from .experiment_runner import ExperimentReport, ExperimentRequest, ExperimentRunner
 from .result_writer import write_jsonl_record
