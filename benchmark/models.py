@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Data models for benchmark items and their metadata."""
+
 from dataclasses import dataclass, field
 from typing import Any
 
